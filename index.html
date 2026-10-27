@@ -22,8 +22,9 @@
   .wordmark b { color:var(--tea); font-weight:800; }
   h1 { font-family:var(--display); font-weight:700; font-size:26px; margin:22px 0 6px; letter-spacing:-0.01em; }
   .lede { color:var(--ink-soft); margin:0 0 14px; line-height:1.45; font-size:15px; }
-  .zip { display:inline-flex; align-items:center; gap:8px; background:var(--wine); color:#fff; text-decoration:none; font-weight:600; padding:10px 16px; border-radius:999px; font-size:15px; }
+  .zip, button.primary { display:inline-flex; align-items:center; gap:8px; background:var(--wine); color:#fff; text-decoration:none; font-weight:600; padding:10px 18px; border-radius:999px; font-size:15px; border:0; font-family:inherit; cursor:pointer; }
   .zip small { opacity:.8; font-weight:500; }
+  .zip[aria-busy="true"], button[disabled] { opacity:.6; pointer-events:none; }
   nav { display:flex; flex-wrap:wrap; gap:6px; margin:18px 0 6px; }
   nav a { font-size:13px; color:var(--wine-deep); background:var(--wine-soft); padding:5px 10px; border-radius:999px; text-decoration:none; }
   .card { background:var(--paper); border-radius:16px; box-shadow:0 2px 12px rgba(42,27,32,.06); margin-top:16px; overflow:hidden; }
@@ -39,374 +40,142 @@
   .stars { color:var(--tea); letter-spacing:1px; }
   .dur { color:var(--ink-muted); font-size:13px; margin-left:auto; font-variant-numeric:tabular-nums; }
   .dl { color:var(--wine); text-decoration:none; font-size:13px; font-weight:600; }
+  .dl:not([href]) { color:var(--ink-muted); font-weight:500; }
   audio { width:100%; height:40px; display:block; }
+  audio:not([src]) { opacity:.35; pointer-events:none; }
   footer { color:var(--ink-muted); font-size:12px; margin-top:28px; line-height:1.5; }
+  /* gate */
+  #gate { margin-top:40px; background:var(--paper); border-radius:16px; padding:22px 18px; box-shadow:0 2px 12px rgba(42,27,32,.06); }
+  #gate h1 { margin-top:0; }
+  #gate p { color:var(--ink-soft); font-size:15px; margin:0 0 14px; line-height:1.45; }
+  #gate form { display:flex; gap:8px; }
+  #gate input { flex:1; min-width:0; font:inherit; font-size:17px; padding:10px 14px; border-radius:12px; border:1.5px solid var(--cream-deep); background:var(--cream); color:var(--ink); }
+  #gate input:focus { outline:none; border-color:var(--tea); }
+  #gate .err { color:var(--wine); font-size:14px; margin:10px 0 0; min-height:1.2em; }
+  #status { font-size:13px; color:var(--ink-muted); margin:8px 0 0; min-height:1.2em; }
+  [hidden] { display:none !important; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="brand"><img src="app-icon.png" alt="" /><span class="wordmark">Novel<b>Tea.</b></span></div>
-  <h1>Viral clips</h1>
-  <p class="lede">25 short reads across 9 scripts — tap ▶ to listen, <strong>⬇︎ save</strong> to keep one on your phone.
-  Stars mark Henry's favorites; <em>alt take</em> is a second read of the same script.</p>
-  <a class="zip" href="NovelTea-viral-clips.zip" download>Download all <small>(.zip, 15 MB)</small></a>
-  <nav><a href="#dracula-02">Dracula-02-viral</a><a href="#dracula-01">Dracula-01-viral</a><a href="#dracula-03">Dracula-03-viral</a><a href="#dracula-04">Dracula-04-viral</a><a href="#frankenstein-01">Frankenstein-01-viral</a><a href="#frankenstein-02">Frankenstein-02-viral</a><a href="#wuthering-01">Wuthering-Heights-01-viral</a><a href="#wuthering-02">Wuthering-Heights-02-viral</a><a href="#wuthering-03">Wuthering-Heights-03-viral</a></nav>
-  
-    <section class="card" id="dracula-02">
-      <header>
-        <img src="covers/dracula.jpg" alt="" />
-        <div>
-          <h2>Dracula-02-viral</h2>
-          <p>Dracula · 4 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">1:02</span>
-          <a class="dl" href="clips/dracula-02-marquita.m4a" download="Dracula-02-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-02-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:38</span>
-          <a class="dl" href="clips/dracula-02-abbie.m4a" download="Dracula-02-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-02-abbie.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          <span class="tag">alt take</span>
-          
-          <span class="dur">0:37</span>
-          <a class="dl" href="clips/dracula-02-abbie-alt.m4a" download="Dracula-02-viral - Abbie alt.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-02-abbie-alt.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          
-          <span class="dur">0:33</span>
-          <a class="dl" href="clips/dracula-02-belle.m4a" download="Dracula-02-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-02-belle.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="dracula-01">
-      <header>
-        <img src="covers/dracula.jpg" alt="" />
-        <div>
-          <h2>Dracula-01-viral</h2>
-          <p>Dracula · 3 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          
-          <span class="dur">0:44</span>
-          <a class="dl" href="clips/dracula-01-belle.m4a" download="Dracula-01-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-01-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          
-          <span class="dur">0:38</span>
-          <a class="dl" href="clips/dracula-01-marquita.m4a" download="Dracula-01-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-01-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          
-          <span class="dur">0:38</span>
-          <a class="dl" href="clips/dracula-01-abbie.m4a" download="Dracula-01-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-01-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="dracula-03">
-      <header>
-        <img src="covers/dracula.jpg" alt="" />
-        <div>
-          <h2>Dracula-03-viral</h2>
-          <p>Dracula · 3 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          
-          <span class="dur">0:28</span>
-          <a class="dl" href="clips/dracula-03-belle.m4a" download="Dracula-03-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-03-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          
-          <span class="dur">0:52</span>
-          <a class="dl" href="clips/dracula-03-marquita.m4a" download="Dracula-03-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-03-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          
-          <span class="dur">0:55</span>
-          <a class="dl" href="clips/dracula-03-abbie.m4a" download="Dracula-03-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-03-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="dracula-04">
-      <header>
-        <img src="covers/dracula.jpg" alt="" />
-        <div>
-          <h2>Dracula-04-viral</h2>
-          <p>Dracula · 2 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          
-          <span class="dur">0:34</span>
-          <a class="dl" href="clips/dracula-04-marquita.m4a" download="Dracula-04-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-04-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          
-          <span class="dur">0:28</span>
-          <a class="dl" href="clips/dracula-04-abbie.m4a" download="Dracula-04-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/dracula-04-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="frankenstein-01">
-      <header>
-        <img src="covers/frankenstein.jpg" alt="" />
-        <div>
-          <h2>Frankenstein-01-viral</h2>
-          <p>Frankenstein · 2 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:35</span>
-          <a class="dl" href="clips/frankenstein-01-belle.m4a" download="Frankenstein-01-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/frankenstein-01-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:33</span>
-          <a class="dl" href="clips/frankenstein-01-abbie.m4a" download="Frankenstein-01-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/frankenstein-01-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="frankenstein-02">
-      <header>
-        <img src="covers/frankenstein.jpg" alt="" />
-        <div>
-          <h2>Frankenstein-02-viral</h2>
-          <p>Frankenstein · 3 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          
-          <span class="dur">0:36</span>
-          <a class="dl" href="clips/frankenstein-02-belle.m4a" download="Frankenstein-02-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/frankenstein-02-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          
-          <span class="dur">0:23</span>
-          <a class="dl" href="clips/frankenstein-02-marquita.m4a" download="Frankenstein-02-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/frankenstein-02-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          
-          <span class="dur">0:41</span>
-          <a class="dl" href="clips/frankenstein-02-abbie.m4a" download="Frankenstein-02-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/frankenstein-02-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="wuthering-01">
-      <header>
-        <img src="covers/wuthering-heights.jpg" alt="" />
-        <div>
-          <h2>Wuthering-Heights-01-viral</h2>
-          <p>Wuthering Heights · 3 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:36</span>
-          <a class="dl" href="clips/wuthering-01-belle.m4a" download="Wuthering-Heights-01-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-01-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:35</span>
-          <a class="dl" href="clips/wuthering-01-marquita.m4a" download="Wuthering-Heights-01-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-01-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:43</span>
-          <a class="dl" href="clips/wuthering-01-abbie.m4a" download="Wuthering-Heights-01-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-01-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="wuthering-02">
-      <header>
-        <img src="covers/wuthering-heights.jpg" alt="" />
-        <div>
-          <h2>Wuthering-Heights-02-viral</h2>
-          <p>Wuthering Heights · 3 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          <span class="stars">★</span>
-          <span class="dur">0:23</span>
-          <a class="dl" href="clips/wuthering-02-belle.m4a" download="Wuthering-Heights-02-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-02-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Marquita</span>
-          
-          <span class="stars">★★</span>
-          <span class="dur">0:29</span>
-          <a class="dl" href="clips/wuthering-02-marquita.m4a" download="Wuthering-Heights-02-viral - Marquita.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-02-marquita.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          
-          <span class="dur">0:33</span>
-          <a class="dl" href="clips/wuthering-02-abbie.m4a" download="Wuthering-Heights-02-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-02-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-    <section class="card" id="wuthering-03">
-      <header>
-        <img src="covers/wuthering-heights.jpg" alt="" />
-        <div>
-          <h2>Wuthering-Heights-03-viral</h2>
-          <p>Wuthering Heights · 2 voices</p>
-        </div>
-      </header>
-      <ul>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Belle</span>
-          
-          
-          <span class="dur">0:50</span>
-          <a class="dl" href="clips/wuthering-03-belle.m4a" download="Wuthering-Heights-03-viral - Belle.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-03-belle.m4a"></audio>
-      </li>
-      <li class="take">
-        <div class="meta">
-          <span class="voice">Abbie</span>
-          
-          <span class="stars">★★★</span>
-          <span class="dur">0:53</span>
-          <a class="dl" href="clips/wuthering-03-abbie.m4a" download="Wuthering-Heights-03-viral - Abbie.m4a" aria-label="Save">⬇︎ save</a>
-        </div>
-        <audio controls preload="none" src="clips/wuthering-03-abbie.m4a"></audio>
-      </li>
-      </ul>
-    </section>
-  <footer>Private link for NovelTea creators — please don't repost the raw audio. One play at a time: starting a clip pauses the others.</footer>
+
+  <section id="gate">
+    <h1>Viral clips</h1>
+    <p>This page is for NovelTea creators. Enter the password Henry sent you.</p>
+    <form id="gateForm">
+      <input id="pw" type="password" autocomplete="current-password" placeholder="Password" autocapitalize="none" autocorrect="off" required />
+      <button class="primary" type="submit">Open</button>
+    </form>
+    <p class="err" id="err"></p>
+  </section>
+
+  <main id="app" hidden>
+    <h1>Viral clips</h1>
+    <p class="lede" id="lede"></p>
+    <a class="zip" id="zip" href="#">Download all <small id="zipMeta"></small></a>
+    <p id="status"></p>
+    <nav id="nav"></nav>
+    <div id="cards"></div>
+    <footer>Private page for NovelTea creators — please don't share the password or repost the raw audio. One clip plays at a time.</footer>
+  </main>
 </div>
 <script>
-  // Only one clip plays at a time; show how many times each was played (per phone).
-  const all = [...document.querySelectorAll('audio')];
-  all.forEach(a => a.addEventListener('play', () => all.forEach(o => o !== a && o.pause())));
+(() => {
+  const SALT = Uint8Array.from('e8b89b884ec10c54d1b4046f9fca64c6'.match(/../g).map(h => parseInt(h, 16)));
+  const STORE = 'noveltea-clips-pw';
+  const $ = (id) => document.getElementById(id);
+  const enc = new TextEncoder();
+  let key = null;
+
+  async function deriveKey(pw) {
+    const base = await crypto.subtle.importKey('raw', enc.encode(pw), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: SALT, iterations: 150000, hash: 'SHA-256' }, base,
+      { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+  }
+  async function fetchDecrypt(url) {
+    const r = await fetch(url, { cache: 'force-cache' });
+    if (!r.ok) throw new Error('fetch ' + r.status);
+    const b = new Uint8Array(await r.arrayBuffer());
+    return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b.slice(0, 12) }, key, b.slice(12));
+  }
+
+  async function unlock(pw, remember) {
+    key = await deriveKey(pw);
+    let manifest;
+    try { manifest = JSON.parse(new TextDecoder().decode(await fetchDecrypt('manifest.json.enc'))); }
+    catch (e) { key = null; throw new Error('wrong'); }
+    if (remember) { try { localStorage.setItem(STORE, pw); } catch {} }
+    render(manifest);
+  }
+
+  function fmt(s) { return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); }
+  function esc(s) { return s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+  function render(m) {
+    const total = m.sections.reduce((n, s) => n + s.takes.length, 0);
+    $('lede').innerHTML = `${total} short reads across ${m.sections.length} scripts — tap ▶ to listen, <strong>⬇︎ save</strong> to keep one on your phone. Stars mark Henry's favorites; <em>alt take</em> is a second read of the same script.`;
+    $('zipMeta').textContent = `(.zip, ${m.zipMB} MB)`;
+    $('nav').innerHTML = m.sections.map(s => `<a href="#${s.id}">${esc(s.name)}</a>`).join('');
+    $('cards').innerHTML = m.sections.map(s => `
+      <section class="card" id="${s.id}">
+        <header><img src="${s.cover}" alt="" /><div><h2>${esc(s.name)}</h2><p>${esc(s.book)} · ${s.takes.length} voice${s.takes.length === 1 ? '' : 's'}</p></div></header>
+        <ul>${s.takes.map(t => `
+          <li class="take" data-file="${t.file}" data-download="${esc(t.download)}">
+            <div class="meta"><span class="voice">${esc(t.voice)}</span>${t.alt ? '<span class="tag">alt take</span>' : ''}${t.stars ? `<span class="stars">${'★'.repeat(t.stars)}</span>` : ''}<span class="dur">${fmt(t.secs)}</span><a class="dl">loading…</a></div>
+            <audio controls preload="none"></audio>
+          </li>`).join('')}
+        </ul>
+      </section>`).join('');
+    $('gate').hidden = true; $('app').hidden = false;
+
+    const audios = [...document.querySelectorAll('audio')];
+    audios.forEach(a => a.addEventListener('play', () => audios.forEach(o => o !== a && o.pause())));
+
+    // Decrypt every clip in the background (3 at a time, page order) and hand the
+    // native players real blob URLs — native controls keep iOS gesture rules happy.
+    const rows = [...document.querySelectorAll('.take')];
+    let done = 0;
+    const status = () => { $('status').textContent = done < rows.length ? `Unlocking clips… ${done}/${rows.length}` : ''; };
+    status();
+    const worker = async () => {
+      while (rows.length) {
+        const row = rows.shift();
+        try {
+          const buf = await fetchDecrypt(row.dataset.file);
+          const url = URL.createObjectURL(new Blob([buf], { type: 'audio/mp4' }));
+          row.querySelector('audio').src = url;
+          const dl = row.querySelector('.dl'); dl.href = url; dl.download = row.dataset.download; dl.textContent = '⬇︎ save';
+        } catch (e) { row.querySelector('.dl').textContent = 'failed'; }
+        done++; status();
+      }
+    };
+    Promise.all([worker(), worker(), worker()]);
+
+    const zip = $('zip');
+    zip.addEventListener('click', async (ev) => {
+      if (zip.dataset.ready) return;           // second tap: plain blob download
+      ev.preventDefault(); zip.setAttribute('aria-busy', 'true'); $('status').textContent = `Preparing the zip (${m.zipMB} MB)…`;
+      try {
+        const buf = await fetchDecrypt(m.zip);
+        zip.href = URL.createObjectURL(new Blob([buf], { type: 'application/zip' })); zip.download = m.zipName; zip.dataset.ready = '1';
+        $('status').textContent = ''; zip.click();
+      } catch (e) { $('status').textContent = 'Zip failed — try again on Wi-Fi.'; }
+      zip.removeAttribute('aria-busy');
+    });
+  }
+
+  $('gateForm').addEventListener('submit', async (ev) => {
+    ev.preventDefault(); $('err').textContent = '';
+    const btn = ev.target.querySelector('button'); btn.disabled = true;
+    try { await unlock($('pw').value.trim(), true); }
+    catch (e) { $('err').textContent = e.message === 'wrong' ? 'That password didn’t work.' : 'Couldn’t load the clips — check your connection.'; }
+    btn.disabled = false;
+  });
+
+  const saved = (() => { try { return localStorage.getItem(STORE); } catch { return null; } })();
+  if (saved) unlock(saved, false).catch(() => { try { localStorage.removeItem(STORE); } catch {} });
+})();
 </script>
 </body>
 </html>
